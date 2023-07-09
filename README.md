@@ -8,4 +8,4 @@ This is a direct link to the quiz page:
 https://katyn-sh.github.io/04-Web-APIs/
 
 This is a screenshot of what the quiz interface looks like:
-![quizScrot](/04-Web-APIs/media/quizScrot.png)
+![quizScrot](/media/quizScrot.png)
