@@ -13,7 +13,7 @@ var result = document.querySelector("#result");
 var currentIndex = 0;
 var wins = 0;
 
-//Create button, add css styling via class, and append them
+// Create buttons with CSS styling
 var option1 = document.createElement("button");
 var option2 = document.createElement("button");
 var option3 = document.createElement("button");
@@ -30,19 +30,19 @@ answerOptions.appendChild(option3);
 answerOptions.appendChild(option4);
 
 
-//onloading page, this function will be called
+// First loading of page, run this function
 function rulesFirst() {
-     //create p element to hold rules, append it to quizBox
+     // <P> element for rules, append it to quizBox
      var rulesFirst = document.createElement("p");
      rulesFirst.setAttribute("style", "margin-bottom: 10px");
      rulesFirst.setAttribute("id", "rulesFirst");
-     rulesFirst.textContent = "Try to answer the following Javascript related questions within the time limit. Keep in mind that incorrect answers will substract 5 seconds from the timer!";
+     rulesFirst.textContent = "JavaScript quiz. Incorrect answers will decrease timer by 5 seconds";
      quizBox.appendChild(rulesFirst);
-     //create start button, append it to quizBox and add click event
+     // Start button, append it to quizBox and add click event
      var startButton = document.createElement("button");
      startButton.innerHTML = "Start Quiz";
      startButton.setAttribute("id", "startButton");
-     //add styling to button using exisiting class in CSS
+     // Button styling
      startButton.classList.add("btn");
      myButton.appendChild(startButton);
      startButton.addEventListener("click", startQuiz);
@@ -50,11 +50,11 @@ function rulesFirst() {
 }
 
 
-//Set countdown timer to 30 seconds, start countdown function
+// Countdown timer for 30 seconds, starting countdown function
 var timeLeft = 30;
 function updateTimer() {
      timerInterval = setInterval(function () {
-//when timer reaches zero, clear interval function and display game over
+// when timer reaches zero, clear interval function and display game over
         if (timeLeft === 0) {
                clearInterval(timerInterval);
                gameOver();
@@ -65,7 +65,7 @@ function updateTimer() {
      }, 1000);
 }
 
-//function to clear display and display game over when timer runs out or questions are finished
+// Function to clear display and display game over when timer runs out or questions are finished
 function gameOver() {
    timerDisplay = '';
     var gameOver = document.createElement("p");
@@ -109,9 +109,9 @@ function gameOver() {
 }
 
 
-//function to start quiz
+// Function to start quiz
 function startQuiz() {
-     //start timer, remove the rules and start button created earlier
+     // Start timer and remove rules and start button
    updateTimer();
    var rules = document.querySelector("#rulesFirst");
    rules.remove();
@@ -121,7 +121,7 @@ function startQuiz() {
    getQuestion();
 }
 
-//function to go through all the questions
+// function to go through all the questions
 function getQuestion () {
       currentQuestion = theQuestions[currentIndex];
       quizBox.textContent = currentQuestion.question;
@@ -141,9 +141,9 @@ function getQuestion () {
         }
 
 
-//function to be called when answer buttons are clicked
+// Function to be called when answer buttons are clicked
 function selectAnswer (event) {
-     //set variable for the current target of the click event
+     // Set variable for the current target of the click event
    var clicked = event.currentTarget.textContent;
 
    if (clicked === currentQuestion.answer) {
@@ -155,7 +155,7 @@ function selectAnswer (event) {
         result.textContent = "Wrong answer!";
         timeLeft -= 5;
    }
-   //if statement to stop looping through questions and end game if all questions have been looped through
+   // if statement to end game if all questions have been looped through
    if (currentIndex === theQuestions.length - 1) {
       //gameOver();
       timeLeft = 0
@@ -167,7 +167,7 @@ function selectAnswer (event) {
 
 }
 
-//Created variable (array) of questions and answers
+// Created variable (array) of questions and answers
      var theQuestions = [
      {question: "Which one of the following is correct?",
       choice1: "i =+ 1;",
