@@ -1,0 +1,90 @@
+header {
+  padding: 20px;
+  background-color: #138890;
+}
+
+h1, h3 {
+  color: seashell;
+  font-weight: bold;
+}
+
+.countdown {
+  font-size: 15px;
+  color:seashell;
+}
+
+a {
+  color: seashell;
+  font-size: 15px;
+}
+
+a:hover {
+  color: lightblue;
+}
+
+main {
+  justify-content: left;
+  align-items: left;
+  font-size: 20px;
+  color: rgb(34, 34, 77);
+  
+}
+
+.center {
+margin: auto;
+width: 60%;
+border: 3px solid #73AD21;
+padding: 10px;
+}
+
+.quizBox, .gameOver, .myButton {
+  text-align: left;
+  justify-content: left;
+
+}  
+
+.answerButtons, .theButtons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 8px;
+  background-color: #ecf5ff;
+}
+
+.btn:hover {
+  background-color: #138890;
+  color: white;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.visibility {
+  visibility: hidden;
+}
+
+
+.footer {
+  color: seashell;
+  padding: 20px;
+  border-top: 2px solid;
+  background-color:#138890;
+}
+
+.userInput {
+  margin-bottom: 10px;
+  border: solid;
+}
+
+.userInput:focus {
+  background-color: #ecf5ff;
+}
+
